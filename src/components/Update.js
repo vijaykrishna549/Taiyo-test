@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-const header = { "Access-Control-Allow-Origin": "*" };
-// import { Link } from "react-router-dom";
 
 function Update() {
   const [firstName, setFirstName] = useState("");
@@ -10,7 +8,6 @@ function Update() {
   const [id, setId] = useState("");
 
   const navigate = useNavigate();
-  const url = "https://642ea6b52b883abc641367d5.mockapi.io/ayio";
 
   // Getting the data from local storage , which is being set in Read.js file
 

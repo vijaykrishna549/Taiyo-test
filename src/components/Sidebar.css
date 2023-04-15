@@ -1,0 +1,19 @@
+.on{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 140px;
+    border: 1px solid black;
+    color: red;
+}
+
+.sideItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    border: 2px solid black;
+    color: blue;
+    text-decoration: underline;
+}

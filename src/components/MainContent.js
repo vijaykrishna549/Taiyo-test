@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import "../App.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function MainContent() {
   return (

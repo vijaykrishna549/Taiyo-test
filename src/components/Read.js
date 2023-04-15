@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import Search from "./Search";
 
 function Read() {
   const [data, setData] = useState([]);
@@ -11,6 +10,7 @@ function Read() {
   const inputHandler = (e) => {
     setInputText(e.target.value.toLowerCase());
   };
+  // getting data from the mock api
   function getData() {
     axios
       .get("https://642ea6b52b883abc641367d5.mockapi.io/ayio")
@@ -22,6 +22,7 @@ function Read() {
         console.log(err, "error");
       });
   }
+  // Delete request for contacts
   const handleDelete = (id) => {
     axios
       .delete(`https://642ea6b52b883abc641367d5.mockapi.io/ayio/${id}`)
@@ -29,6 +30,8 @@ function Read() {
         getData();
       });
   };
+
+  // After getting data from api, set to local storage (Only the Contact to be edited)
   const setToLocalStorage = (id, firstName, lastName) => {
     localStorage.setItem("id", id);
     localStorage.setItem("firstName", firstName);
@@ -70,6 +73,7 @@ function Read() {
             <th scope="col"></th>
           </tr>
         </thead>
+        {/* To Serch the contact based on either the first name or last name*/}
         {data
           .filter((element) => {
             console.log(element, "elele");

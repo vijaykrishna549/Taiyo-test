@@ -12,6 +12,8 @@ function Update() {
   const navigate = useNavigate();
   const url = "https://642ea6b52b883abc641367d5.mockapi.io/ayio";
 
+  // Getting the data from local storage , which is being set in Read.js file
+
   useEffect(() => {
     setId(localStorage.getItem("id"));
     setFirstName(localStorage.getItem("firstName"));
@@ -24,9 +26,9 @@ function Update() {
       .put(`https://642ea6b52b883abc641367d5.mockapi.io/ayio/${id}`, {
         firstName: firstName,
         lastName: lastName,
-        // email: email,
       })
       .then(() => {
+        // After updating the data , againg redirecting to Read Contact Page
         navigate("/read");
       });
   };

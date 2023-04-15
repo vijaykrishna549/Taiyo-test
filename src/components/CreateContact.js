@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import Sidebar from "./Sidebar";
+
 const header = { "Access-Control-Allow-Origin": "*" };
 
 function CreateContact() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const history = useNavigate();
+  // using mock api for crud operations required
   const url = "https://642ea6b52b883abc641367d5.mockapi.io/ayio";
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,17 +17,15 @@ function CreateContact() {
       .post(url, {
         firstName: firstName,
         lastName: lastName,
-        // email: email,
-
         header,
       })
       .then(() => {
+        // after clicking on submit, the page should redirect to read contacts page
         history("/read");
       });
   };
   return (
     <div>
-      {/* <Sidebar></Sidebar> */}
       <form>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">
